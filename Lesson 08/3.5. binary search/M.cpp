@@ -3,83 +3,19 @@ using namespace std;
 
 int main()
 {
-    long long n, k, s, L = 1, R, tmp, x1=0, s2, s3;
-    cin >> n;
-    R = n;
+    long long L = 1, R = 1e9, S = 0, x, k = 0, m;
 
-    k = n;
-    cout << "? " << k << "\n";
-    cin >> s;
-    s = k * (k + 1) / 2 - s;
-
-    s3 = s;
-
-    while (true)
+    while (L != R)
     {
-        k = (L + R) / 2;
-        cout << "? " << k << "\n";
-        cin >> s;
-        s = k * (k + 1) / 2 - s;
-        if (s == 0)
-            L = k + 1;
-        else if (s == s3)
-            R = k - 1;
-        else
-            break;
+        long long m = (L + R) / 2;
+        x = m - S % m;
+        cout << "run " << x << "\n";
+        S += x;
+        cin >> k;
+        L = max(L, S / (k + 1) + 1);
+        if (k != 0)
+            R = min(R, S / k);
     }
 
-    tmp = s;
-    if (s < n)
-    {
-        cout << "? " << tmp - 1 << "\n";
-        cin >> s;
-        s = tmp * (tmp - 1) / 2 - s;
-        if (s == 0)
-            x1 = tmp;
-    }
-
-    s = tmp;
-    if (x1 != 0)
-    {
-        L = k + 1;
-        while (true)
-        {
-            k = (L + R) / 2;
-            cout << "? " << k << "\n";
-            cin >> s;
-            s = k * (k + 1) / 2 - s;
-            if (s == x1)
-                L = k + 1;
-            else if (s == s3)
-                R = k - 1;
-            else
-            {
-                s2 = s;
-                break;
-            }
-        }
-    }
-    else
-    {
-        s2 = s;
-        R = k - 1;
-        while (true)
-        {
-            k = (L + R) / 2;
-            cout << "? " << k << "\n";
-            cin >> s;
-            s = k * (k + 1) / 2 - s;
-            if (s == 0)
-                L = k + 1;
-            else if (s == s2)
-                R = k - 1;
-            else
-            {
-                x1 = s;
-                break;
-            }
-        }
-    }
-
-    cout << "! " << x1 << " " << s2 - x1 << " " << s3 - s2 << "\n";
+    cout << "ensure " << L << "\n";
 }
