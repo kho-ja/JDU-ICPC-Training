@@ -2,6 +2,9 @@
 using namespace std;
 
 int main() {
+    cin.tie(nullptr)->sync_with_stdio(false);
+    // ios_base::sync_with_stdio(false);
+    // cin.tie();
     int n, a[100000], oneID = -1;
     cin >> n;
     for (int i = 0; i < n; i++) {

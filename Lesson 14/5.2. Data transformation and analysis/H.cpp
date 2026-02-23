@@ -2,20 +2,22 @@
 using namespace std;
 
 int main() {
-    int n;
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n, a[100000], k;
     cin >> n;
-
-    int a[100];
-    for (int i = 0; i < n; i++) cin >> a[i];
-
-    int total = 0;
-    int max_future = 0;
-
-    for (int i = n - 1; i >= 0; i--) {
-        if (a[i] > max_future) max_future = a[i];
-        total += max_future;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
     }
-
-    cout << total;
+    cin >> k;
+    k %= n;
+    if (k < 0) k += n;
+    int start = (n - k) % n;
+    for (int i = start; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    for (int i = 0; i < start; i++) {
+        cout << a[i] << " ";
+    }
     return 0;
 }
