@@ -10,15 +10,17 @@ int main() {
     }
 
     bool changed = true;
+    int cnt = 0;
     do {
         changed = false;
-        for (int i = 0; i < n - 1; i++) {
+        for (int i = 0; i < n - 1 - cnt; i++) {
             if (a[i] > a[i + 1]) {
                 swap(a[i], a[i + 1]);
                 changed = true;
                 swaps++;
             }
         }
+        cnt++;
     } while (changed);
 
     cout << swaps;
