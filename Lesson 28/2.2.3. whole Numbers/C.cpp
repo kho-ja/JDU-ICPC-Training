@@ -9,7 +9,7 @@ int main() {
     cin >> n >> s;
 
     k = s.size();
-    for (int i = 1; i <= n; i += k)
+    for (int i = k + 1; i <= n; i += k)
         product *= i;
 
     cout << product;

@@ -22,13 +22,12 @@ int main() {
         if (rem % Y == 0) {
             long long b = rem / Y;
 
-            if (swapped)
-                cout << b << " " << a;
-            else
-                cout << a << " " << b;
+            if (swapped) swap(a, b);
+            cout << a << " " << b;
             return 0;
         }
     }
 
     cout << "-1 -1";
+    return 0;
 }
