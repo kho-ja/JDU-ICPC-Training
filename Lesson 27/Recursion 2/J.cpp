@@ -2,18 +2,18 @@
 #include <string>
 using namespace std;
 
-using ll = long long;
+using int = long long;
 
-ll res;
+int res;
 string s;
 
-ll calculate(int& i);
+int calculate(int& i);
 
-ll getNumber(int& i) {
-    ll res = 0;
+int getNumber(int& i) {
+    int res = 0;
     if (s[i] == '(') {
         i++;
-        ll res = calculate(i);
+        int res = calculate(i);
         i++;
         return res;
     }
@@ -23,8 +23,8 @@ ll getNumber(int& i) {
     return res;
 }
 
-ll calculate(int& i) {
-    ll res = getNumber(i);
+int calculate(int& i) {
+    int res = getNumber(i);
     while (i < s.size() && s[i] != ')') {
         switch (s[i++]) {
         case '+':
@@ -41,7 +41,7 @@ ll calculate(int& i) {
     return res;
 }
 
-ll calculate() {
+int calculate() {
     int i = 0;
     return calculate(i);
 }
