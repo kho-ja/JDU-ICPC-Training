@@ -18,6 +18,7 @@
 /Release/
 # Ignore IDE specific files
 .vscode/
+.zed/
 .idea/
 *.code-workspace
 # Ignore CMake files
@@ -34,6 +35,6 @@ Makefile
 # Ignore coverage files
 *.gcda
 *.gcno
-# Ignore other common files 
+# Ignore other common files
 *.tmp
 *.bak
