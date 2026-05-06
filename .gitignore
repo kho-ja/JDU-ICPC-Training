@@ -38,3 +38,6 @@ Makefile
 # Ignore other common files
 *.tmp
 *.bak
+
+# zed
+nul
